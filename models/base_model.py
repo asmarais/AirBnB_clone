@@ -14,11 +14,12 @@ class BaseModel:
         '''Instantiation of the attributes'''
 
         self.id = str(uuid.uuid4())
+        dtform = '%Y-%m-%dT%H:%M:%S.%f'
 
         if kwargs:
             for k, v in kwargs.items():
                 if k == "created_at" or k == "updated_at":
-                    self.__dict__[k] = datetime.strptime(v, '%Y-%m-%dT%H:%M:%S.%f')
+                    self.__dict__[k] = datetime.strptime(v, dtform)
                 else:
                     self.__dict__[k] = v
         else:

@@ -4,7 +4,7 @@ Implements BaseModel class
 '''
 import uuid
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel:
@@ -17,7 +17,7 @@ class BaseModel:
 
         if kwargs:
             for k, v in kwargs.items():
-                if key == '__class__':
+                if k == '__class__':
                     continue
                 if k == "created_at" or k == "updated_at":
                     self.__dict__[k] = datetime.strptime(v, dtform)
@@ -41,7 +41,7 @@ class BaseModel:
         '''updates the public instance attribute updated_at'''
 
         self.updated_at = datetime.today()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         '''returns a dictionary containing all keys/values of __dict__'''

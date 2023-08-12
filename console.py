@@ -16,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
     '''the entry point of the command interpreter'''
 
     __classes = ["BaseModel", "User", "State", "City",
-                   "Amenity", "Place", "Review"]
+                 "Amenity", "Place", "Review"]
 
     # By default it prints (Cmd)
     prompt = "(hbnb) "  # Prompts '(hbnb) ' on the console
@@ -70,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
                     print(obj)
 
     def do_show(self, arg):
-        '''Prints the string rep of an instance based on the class name and id'''
+        '''Prints a string rep of an instance based on class name and id'''
 
         args = arg.split()
         inst = storage.all()

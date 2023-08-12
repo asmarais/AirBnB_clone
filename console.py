@@ -56,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         list1 = []
         if line != "":
             word = line.split(' ')
-            if word[0] not in storage.classes():
+            if word[0] not in  HBNBCommand.__classes:
                 print("** class doesn't exist **")
             else:
                 for key, item in storage.all().items():

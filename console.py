@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
                 print(obj)
         else:
             if args[0] not in HBNBCommand.__classes:
-                print("** class name doesn't exist **")
+                print("** class doesn't exist **")
                 return
             for obj in inst.values():
                 if obj.__class__.__name__ == args[0]:

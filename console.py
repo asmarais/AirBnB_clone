@@ -60,14 +60,14 @@ class HBNBCommand(cmd.Cmd):
 
         if len(args) == 0:
             for obj in inst.values():
-                print(obj)
+                print(str(obj))
         else:
             if args[0] not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
                 return
             for obj in inst.values():
                 if obj.__class__.__name__ == args[0]:
-                    print(obj)
+                    print(str(obj))
 
     def do_show(self, arg):
         '''Prints a string rep of an instance based on class name and id'''

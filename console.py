@@ -61,10 +61,13 @@ class HBNBCommand(cmd.Cmd):
             else:
                 for key, item in storage.all().items():
                     if item.__class__.__name__ == word[0]:
-                        list1.append(str(obj))
+                        list1.append(str(item))
+                print(list1)
         else:
             for key, item in storage.all().items():
-                list1.append(str(obj))
+                list1.append(str(item))
+            print(list1)
+        
 
 
     def do_show(self, arg):

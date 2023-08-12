@@ -23,9 +23,9 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        if line is None or line = "":
+        if line is None or line == "":
             print("** class name missing **")
-        elif line is not in storage.classes():
+        elif line not in storage.classes():
             print("** class doesn't exist **")
         else:
             cl = storage.classes()[line]()
@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
             print(cl.id)
 
     def do_show(self, line):
-        if line is None or line = "":
+        if line is None or line == "":
             print("** class name missing **")
         else:
             word = line.split(' ')

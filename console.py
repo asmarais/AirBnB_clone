@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             obj.save()
             print(obj.id)
 
-     def do_all(self, line):
+    def do_all(self, line):
         list1 = []
         if line != "":
             word = line.split(' ')

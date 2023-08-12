@@ -79,8 +79,25 @@ class HBNBCommand(cmd.Cmd):
             for key, item in storage.all().items():
                 list1.append(str(obj))
 
-        
-
+    def do_update(self, line):
+        if line is None or line == "":
+            print("** class name missing **")
+        else:
+            word = line.split(' ')
+            if word[0] not in storage.classes():
+                print("** class doesn't exist **")
+            elif len(word) < 2:
+                print("** instance id missing **")
+            else:
+                key = "{}.{}".format(word[0], word[1])
+                if key not in storage.all():
+                    print("** no instance found **")
+                elif len(word) < 3:
+                    print("** attribute name missing **")
+                elif len(word) < 4:
+                    print("** value missing **")
+                elif len(word) == 4:
+                    pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

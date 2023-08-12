@@ -52,22 +52,20 @@ class HBNBCommand(cmd.Cmd):
             obj.save()
             print(obj.id)
 
-    def do_all(self, arg):
-        '''Prints all string representation of all instances'''
-
-        args = arg.split()
-        inst = storage.all()
-
-        if len(args) == 0:
-            for obj in inst.values():
-                print(str(obj))
-        else:
-            if args[0] not in HBNBCommand.__classes:
+     def do_all(self, line):
+        list1 = []
+        if line != "":
+            word = line.split(' ')
+            if word[0] not in storage.classes():
                 print("** class doesn't exist **")
-                return
-            for obj in inst.values():
-                if obj.__class__.__name__ == args[0]:
-                    print(str(obj))
+            else:
+                for key, item in storage.all().items():
+                    if item.__class__.__name__ == word[0]:
+                        list1.append(str(obj))
+        else:
+            for key, item in storage.all().items():
+                list1.append(str(obj))
+
 
     def do_show(self, arg):
         '''Prints a string rep of an instance based on class name and id'''

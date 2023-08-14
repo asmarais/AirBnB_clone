@@ -80,6 +80,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertEqual(bm.created_at, dt)
         self.assertEqual(bm.updated_at, dt)
 
+
 class TestBaseModel_save(unittest.TestCase):
     '''tests edge cases for the BaseModel class - save method'''
 
@@ -105,6 +106,7 @@ class TestBaseModel_save(unittest.TestCase):
         bm = BaseModel()
         with self.assertRaises(TypeError):
             bm.save(None)
+
 
 class TestBaseModel_to_dict(unittest.TestCase):
     '''tests edge cases for the BaseModel class - to_dict method'''
@@ -152,6 +154,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         bm = BaseModel()
         with self.assertRaises(TypeError):
             bm.to_dict(None)
+
 
 if __name__ == "__main__":
     unittest.main()

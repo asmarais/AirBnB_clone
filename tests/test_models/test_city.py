@@ -80,6 +80,7 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertEqual(city.created_at, dt)
         self.assertEqual(city.updated_at, dt)
 
+
 class TestCity_save(unittest.TestCase):
     '''tests edge cases for the City class - save method'''
 
@@ -105,6 +106,7 @@ class TestCity_save(unittest.TestCase):
         city = City()
         with self.assertRaises(TypeError):
             city.save(None)
+
 
 class TestCity_to_dict(unittest.TestCase):
     '''tests edge cases for the City class - to_dict method'''
@@ -152,6 +154,7 @@ class TestCity_to_dict(unittest.TestCase):
         city = City()
         with self.assertRaises(TypeError):
             city.to_dict(None)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -41,11 +41,11 @@ class FileStorage:
     def reload(self):
         '''deserializes the JSON file to __objects'''
 
-        if not os.path.isfile(FileStorage.__file_path):
+        try:
+            with open(self.__file_path, 'r') as f:
+                dict = json.loads(f.read())
+                for value in dict.values():
+                    cls = value["__class__"]
+                    self.new(eval(cls)(**value))
+        except Exception:
             pass
-        with open(FileStorage.__file_path) as f:
-            objdict = json.load(f)
-            for o in objdict.values():
-                cls_name = o["__class__"]  # take the value of __class__ key
-                del o["__class__"]  # delete the __class__ item (name)
-                self.new(eval(cls_name)(**o))  # create new instance of clsname

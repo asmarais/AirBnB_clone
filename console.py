@@ -56,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         list1 = []
         if line != "":
             word = line.split(' ')
-            if word[0] not in  HBNBCommand.__classes:
+            if word[0] not in HBNBCommand.__classes:
                 print("** class doesn't exist **")
             else:
                 for key, item in storage.all().items():
@@ -67,8 +67,6 @@ class HBNBCommand(cmd.Cmd):
             for key, item in storage.all().items():
                 list1.append(str(item))
             print(list1)
-        
-
 
     def do_show(self, arg):
         '''Prints a string rep of an instance based on class name and id'''

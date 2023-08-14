@@ -80,6 +80,7 @@ class TestPlace_instantiation(unittest.TestCase):
         self.assertEqual(place.created_at, dt)
         self.assertEqual(place.updated_at, dt)
 
+
 class TestPlace_save(unittest.TestCase):
     '''tests edge cases for the Place class - save method'''
 
@@ -105,6 +106,7 @@ class TestPlace_save(unittest.TestCase):
         place = Place()
         with self.assertRaises(TypeError):
             place.save(None)
+
 
 class TestPlace_to_dict(unittest.TestCase):
     '''tests edge cases for the Place class - to_dict method'''
@@ -152,6 +154,7 @@ class TestPlace_to_dict(unittest.TestCase):
         place = Place()
         with self.assertRaises(TypeError):
             place.to_dict(None)
+
 
 if __name__ == "__main__":
     unittest.main()

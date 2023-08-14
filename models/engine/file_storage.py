@@ -42,7 +42,7 @@ class FileStorage:
         '''deserializes the JSON file to __objects'''
 
         if not os.path.isfile(FileStorage.__file_path):
-            return
+            pass
         with open(FileStorage.__file_path) as f:
             objdict = json.load(f)
             for o in objdict.values():

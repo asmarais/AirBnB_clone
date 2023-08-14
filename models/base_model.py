@@ -48,6 +48,6 @@ class BaseModel:
 
         doc = self.__dict__.copy()
         doc["__class__"] = self.__class__.__name__
-        doc["updated_at"] = doc["updated_at"].isoformat() 
+        doc["updated_at"] = doc["updated_at"].isoformat()
         doc["created_at"] = doc["created_at"].isoformat()
         return doc

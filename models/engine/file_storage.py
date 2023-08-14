@@ -48,4 +48,4 @@ class FileStorage:
                     cls = value["__class__"]
                     self.new(eval(cls)(**value))
         except Exception:
-            pass
+            return
